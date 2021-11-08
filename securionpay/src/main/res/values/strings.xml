@@ -1,0 +1,42 @@
+<resources>
+    <string name="add_payment">Add payment</string>
+    <string name="select_amount">Select amount</string>
+    <string name="email">E-mail</string>
+    <string name="card_information">Card information</string>
+    <string name="card_number">Card number</string>
+    <string name="expiration">Expiration date</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Save this card for future payments</string>
+    <string name="enter_payment_data">Enter payment data</string>
+    <string name="confirm">Confirm</string>
+    <string name="pay">Pay %s</string>
+    <string name="user_information">User information</string>
+    <string name="unlock_card_details">Unlock card details</string>
+    <string name="sms_code_info">Enter the code we\'ve just sent to your mobile phone</string>
+    <string name="card">Card</string>
+    <string name="no_code_info">Didn\'t get the code?</string>
+
+    <string name="invalid_email">Invalid e-mail address.</string>
+    <string name="unknown_error">Unknown error. Try again or contact support.</string>
+    <string name="invalid_number">The card number is not a valid credit card number.</string>
+    <string name="invalid_expiry_month">The card\'s expiration month is invalid.</string>
+    <string name="invalid_expiry_year">The card\'s expiration year is invalid.</string>
+    <string name="invalid_cvc">Your card\'s security code is invalid.</string>
+    <string name="incorrect_cvc">The card\'s security code failed verification.</string>
+    <string name="incorrect_zip">The card\'s zip code failed verification.</string>
+    <string name="expired_card">The card has expired.</string>
+    <string name="insufficient_funds">The charge amount exceeds the available funds or the card\'s credit limit.</string>
+    <string name="lost_or_stolen">The card is marked as lost or stolen.</string>
+    <string name="suspected_fraud">The charge is suspected to be fraudulent.</string>
+    <string name="card_declined">The card was declined.</string>
+    <string name="processing_error">An error occurred while processing the card.</string>
+    <string name="blacklisted">The card is blacklisted.</string>
+    <string name="expired_token">The token has expired.</string>
+    <string name="limit_exceeded">The charge amount exceeds the available fund or the card\'s credit limit.</string>
+
+    <string name="threed_error_jailbroken" translatable="false">The device is jailbroken.</string>
+    <string name="threed_error_integrity_tampered" translatable="false">The integrity of the SDK has been tampered.</string>
+    <string name="threed_error_simulator" translatable="false">An emulator is being used to run the app.</string>
+    <string name="threed_error_osnotsupported" translatable="false">The OS or the OS version is not supported.</string>
+    <string name="threed_error_unknown" translatable="false">Unknown </string>
+</resources>

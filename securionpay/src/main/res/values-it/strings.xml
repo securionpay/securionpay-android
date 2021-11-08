@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Aggiungi pagamento</string>
+    <string name="select_amount">Seleziona importo</string>
+    <string name="email">E-mail</string>
+    <string name="card_information">Informazioni sulla carta</string>
+    <string name="card_number">Numero della carta</string>
+    <string name="expiration">Data di scadenza</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Salva questa carta per pagamenti futuri</string>
+    <string name="enter_payment_data">Inserisci i dati di pagamento</string>
+    <string name="confirm">Conferma</string>
+    <string name="pay">Paga %s</string>
+    <string name="user_information">Informazioni utente</string>
+    <string name="unlock_card_details">Sblocca i dettagli della carta</string>
+    <string name="sms_code_info">Inserisci il codice che abbiamo appena inviato al tuo cellulare</string>
+    <string name="card">Carta</string>
+    <string name="no_code_info">Non hai ricevuto il codice?</string>
+
+    <string name="invalid_email">Indirizzo e-mail non valido.</string>
+    <string name="unknown_error">Errore sconosciuto. Riprova o contatta il supporto.</string>
+    <string name="invalid_number">Il numero della carta non è un numero valido.</string>
+    <string name="invalid_expiry_month">Il mese di scadenza della carta non è valido.</string>
+    <string name="invalid_expiry_year">L\'anno di scadenza della carta non è valido.</string>
+    <string name="invalid_cvc">Il codice di sicurezza della tua carta non è valido.</string>
+    <string name="incorrect_cvc">Il codice di sicurezza della carta non è stato verificato.</string>
+    <string name="incorrect_zip">Il codice postale della carta non ha superato la verifica.</string>
+    <string name="expired_card">La carta è scaduta.</string>
+    <string name="insufficient_funds">L\'importo dell\'addebito supera il fondo disponibile o il limite di credito della carta.</string>
+    <string name="lost_or_stolen">La carta è contrassegnata come persa o rubata.</string>
+    <string name="suspected_fraud">L\'addebito è sospettato di essere fraudolento.</string>
+    <string name="card_declined">La carta è stata rifiutata per altri motivi.</string>
+    <string name="processing_error">Si è verificato un errore durante l\'elaborazione della carta.</string>
+    <string name="blacklisted">La carta è nella lista nera.</string>
+    <string name="expired_token">Il token è scaduto.</string>
+    <string name="limit_exceeded">L\'importo dell\'addebito supera il fondo disponibile o il limite di credito della carta.</string>
+</resources>

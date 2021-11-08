@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheet"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="false"
+        android:defaultFocusHighlightEnabled="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/padding_standard"
+        android:paddingTop="@dimen/padding_big"
+        android:paddingRight="@dimen/padding_standard"
+        android:paddingBottom="@dimen/padding_standard">
+
+        <ProgressBar
+            android:id="@+id/progressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewAddPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingBottom="@dimen/padding_extreme"
+                android:text="@string/add_payment"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:background="@color/white"
+                android:id="@+id/buttonClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDonation"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <TextView
+            android:id="@+id/textViewUserInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:paddingTop="0dp"
+            android:paddingBottom="@dimen/padding_medium"
+            android:text="@string/user_information"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_section" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutEmail"
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/email"
+            android:nextFocusDown="@id/textInputCardNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEmail"
+                style="@style/TextInputStyle"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewEmailError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:paddingTop="@dimen/padding_compact"
+            android:paddingBottom="0dp"
+            android:text=""
+            android:textColor="@color/error"
+            android:textSize="@dimen/font_error" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutSMS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/unlock_card_details"
+                android:paddingTop="@dimen/padding_huge"
+                android:src="@drawable/ic_locker_sms" />
+
+            <TextView
+                android:id="@+id/textViewUnlockCardDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:paddingTop="@dimen/padding_standard"
+                android:paddingBottom="@dimen/padding_medium"
+                android:text="@string/unlock_card_details"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_section"
+                app:helperTextTextColor="@color/primary"
+                app:hintTextColor="@color/primary" />
+
+            <TextView
+                android:id="@+id/textViewSMSCodeInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:paddingTop="0dp"
+                android:paddingBottom="@dimen/padding_standard"
+                android:text="@string/sms_code_info"
+                android:textAlignment="center"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/font_body"
+                app:helperTextTextColor="@color/primary"
+                app:hintTextColor="@color/primary" />
+
+            <com.alimuzaffar.lib.pin.PinEntryEditText
+                android:id="@+id/textInputSMSCode"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:cursorVisible="false"
+                android:digits="1234567890"
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="number"
+                android:layoutDirection="ltr"
+                android:maxLength="6"
+                android:textColor="@color/primary"
+                android:textIsSelectable="false"
+                android:textSize="24sp"
+                app:pinAnimationType="fromBottom"
+                app:pinBackgroundDrawable="@drawable/pin_background"
+                app:pinBackgroundIsSquare="true"
+                app:pinLineColors="@color/primary"
+                app:pinTextBottomPadding="@dimen/padding_standard" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewCardInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:paddingTop="@dimen/padding_huge"
+            android:paddingBottom="@dimen/padding_medium"
+            android:text="@string/card_information"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_section"
+            app:helperTextTextColor="@color/primary"
+            app:hintTextColor="@color/primary" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edge"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:paddingLeft="1dp"
+                android:paddingRight="1dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputLayoutStyle"
+                    android:hint="@string/card_number"
+                    android:nextFocusLeft="@id/textInputExpiration"
+                    android:nextFocusRight="@id/textInputExpiration"
+                    android:nextFocusUp="@id/textInputExpiration"
+                    android:nextFocusDown="@id/textInputExpiration"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputCardNumber"
+                        style="@style/TextInputStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="datetime" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/imageViewCardBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/card"
+                    android:src="@drawable/ic_unknown_card"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/separator_size"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/grayLight" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal"
+                android:paddingLeft="1dp"
+                android:paddingTop="0dp"
+                android:paddingRight="1dp"
+                android:paddingBottom="1dp"
+                android:weightSum="2">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/expiration"
+                    android:nextFocusRight="@id/textInputCVC">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputExpiration"
+                        style="@style/TextInputStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="datetime"
+                        android:textCursorDrawable="@drawable/color_cursor" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="@dimen/separator_size"
+                    android:layout_height="match_parent"
+                    android:background="@color/grayLight" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/TextInputLayoutStyle"
+                        android:hint="@string/cvc"
+                        android:paddingLeft="@dimen/padding_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputCVC"
+                            style="@style/TextInputStyle"
+                            android:layout_width="113dp"
+                            android:imeOptions="actionDone"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/cvc"
+                        android:src="@drawable/ic_cvc_helper"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewCardError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:paddingTop="@dimen/padding_compact"
+            android:paddingBottom="0dp"
+            android:text=""
+            android:textColor="@color/error"
+            android:textSize="@dimen/font_error" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutRememberSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewRememberCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:paddingTop="@dimen/padding_standard"
+                android:paddingBottom="@dimen/padding_standard"
+                android:text="@string/save_for_future_payments"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_body"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Switch
+                android:id="@+id/switchRememberCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumbTint="@color/primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/viewButtonSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/padding_huge"
+            android:background="@color/grayLight" />
+
+        <TextView
+            android:id="@+id/textViewError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:paddingTop="@dimen/padding_standard"
+            android:paddingBottom="10dp"
+            android:text=""
+            android:textColor="@color/error"
+            android:textSize="@dimen/font_error" />
+
+        <TextView
+            android:id="@+id/textViewAdditionalButtonInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:paddingTop="@dimen/padding_huge"
+            android:paddingBottom="@dimen/padding_compact"
+            android:text="@string/no_code_info"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_body" />
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/buttonPayment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_shape_default_rounded"
+            android:fontFamily="@font/montserrat_bold"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            app:finalCornerAngle="30dp"
+            app:initialCornerAngle="5dp"
+            app:spinning_bar_color="@color/white"
+            app:spinning_bar_padding="15dp"
+            app:spinning_bar_width="3dp" />
+    </LinearLayout>
+</ScrollView>

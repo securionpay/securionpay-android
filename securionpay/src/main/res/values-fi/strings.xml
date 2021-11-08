@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Lisää maksu</string>
+    <string name="select_amount">Valitse summa</string>
+    <string name="email">Sähköposti</string>
+    <string name="card_information">Kortin tiedot</string>
+    <string name="card_number">Kortin numero</string>
+    <string name="expiration">Lopetuspäivä</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Tallenna tämä kortti tulevia maksuja varten</string>
+    <string name="enter_payment_data">Syötä maksutiedot</string>
+    <string name="confirm">Vahvista</string>
+    <string name="pay">Maksa %s</string>
+    <string name="user_information">Käyttäjän tiedot</string>
+    <string name="unlock_card_details">Poista kortin tiedot</string>
+    <string name="sms_code_info">Kirjoita koodi, jonka olemme juuri lähettäneet matkapuhelimeesi</string>
+    <string name="card">Card</string>
+    <string name="no_code_info">Et saanut koodia?</string>
+
+    <string name="invalid_email">Väärennetty sähköpostiosoite.</string>
+    <string name="unknown_error">Tuntematon virhe. Yritä uudelleen tai ota yhteyttä asiakaspalveluun.</string>
+    <string name="invalid_number">Kortin numero ei ole kelvollinen kortin numero.</string>
+    <string name="invalid_expiry_month">Kortin voimassaolon päättymiskuukausi on virheellinen.</string>
+    <string name="invalid_expiry_year">Kortin viimeinen voimassaolovuosi on virheellinen.</string>
+    <string name="invalid_cvc">Korttisi turvakoodi on virheellinen.</string>
+    <string name="incorrect_cvc">Kortin turvakoodin vahvistus epäonnistui.</string>
+    <string name="incorrect_zip">Kortin postinumero epäonnistui vahvistuksessa.</string>
+    <string name="expired_card">Kortti on vanhentunut.</string>
+    <string name="insufficient_funds">Latauksen määrä ylittää käytettävissä olevat varat tai kortin\ luottorajan.</string>
+    <string name="lost_or_stolen">Kortti on merkitty kadonneeksi tai varastetuksi.</string>
+    <string name="suspected_fraud">Latauksen epäillään olevan vilpillinen.</string>
+    <string name="card_declined">Kortti on hylätty muusta syystä.</string>
+    <string name="processing_error">Kortin käsittelyssä tapahtui virhe.</string>
+    <string name="blacklisted">Kortti on mustalla listalla.</string>
+    <string name="expired_token">Kortin tunniste on vanhentunut.</string>
+    <string name="limit_exceeded">Lataussumma ylittää käytettävissä olevat varat tai kortin luottorajan.</string>
+</resources>

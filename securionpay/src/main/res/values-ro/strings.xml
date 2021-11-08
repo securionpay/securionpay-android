@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Adaugă plata</string>
+    <string name="select_amount">Selectează suma</string>
+    <string name="email">E-mail</string>
+    <string name="card_information">Informații despre card</string>
+    <string name="card_number">Numărul cardului</string>
+    <string name="expiration">Data de expirare</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Salvează acest card pentru plăți viitoare</string>
+    <string name="enter_payment_data">Introduceți datele de plată</string>
+    <string name="confirm">Confirmă</string>
+    <string name="pay">Pay %s</string>
+    <string name="user_information">Informații utilizator</string>
+    <string name="unlock_card_details">Deblochează detaliile cardului</string>
+    <string name="sms_code_info">Inscrieți codul pe care tocmai vi l-am trimis pe telefonul mobil</string>
+    <string name="card">Card</string>
+    <string name="no_code_info">Nu ați primit codul?</string>
+
+    <string name="invalid_email">Adresa de e-mail invalidă.</string>
+    <string name="unknown_error">Eroare necunoscută. Încercați din nou sau contactați serviciul de asistență.</string>
+    <string name="invalid_number">Numărul cardului nu este un număr de card valid.</string>
+    <string name="invalid_expiry_month">Luna de expirare a cardului nu este validă.</string>
+    <string name="invalid_expiry_year">Anul de expirare al cardului nu este valabil.</string>
+    <string name="invalid_cvc">Codul de securitate al cardului dvs. nu este valid.</string>
+    <string name="incorrect_cvc">Codul de securitate al cardului nu a reușit să fie verificat.</string>
+    <string name="incorrect_zip">Codul poștal al cardului nu a reușit să fie verificat.</string>
+    <string name="expired_card">Cardul a expirat.</string>
+    <string name="insufficient_funds">Măreția debitului depășește fondul disponibil sau limita de credit a cardului.</string>
+    <string name="lost_or_stolen">Cardul este marcat ca fiind pierdut sau furat.</string>
+    <string name="suspected_fraud">Se suspectează că taxa este frauduloasă.</string>
+    <string name="card_declined">Cardul a fost refuzat din alt motiv.</string>
+    <string name="processing_error">A apărut o eroare în timpul procesării cardului.</string>
+    <string name="blacklisted">Cardul este pe lista neagră.</string>
+    <string name="expired_token">Tokenul a expirat.</string>
+    <string name="limit_exceeded">Măreția debitului depășește fondul disponibil sau limita de credit a cardului.</string>
+</resources>

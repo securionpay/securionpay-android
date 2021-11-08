@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Betaling toevoegen</string>
+    <string name="select_amount">Selecteer bedrag</string>
+    <string name="email">E-mail</string>
+    <string name="card_information">Card informatie</string>
+    <string name="card_number">Card_nummer</string>
+    <string name="expiration">Vervaldatum</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Bewaar deze kaart voor toekomstige betalingen</string>
+    <string name="enter_payment_data">Voer betalingsgegevens in</string>
+    <string name="confirm">Bevestigen</string>
+    <string name="pay">Betaal %s</string>
+    <string name="user_information">Gebruikersinformatie</string>
+    <string name="unlock_card_details">De kaartgegevens ontgrendelen</string>
+    <string name="sms_code_info">Voer de code in die we zojuist naar uw mobiele telefoon hebben gestuurd</string>
+    <string name="card">Kaart</string>
+    <string name="no_code_info">Heeft u de code niet ontvangen?</string>
+
+    <string name="invalid_email">Ongeldig e-mail adres.</string>
+    <string name="unknown_error">Onbekende fout. Probeer het opnieuw of neem contact op met support.</string>
+    <string name="invalid_number">Het kaartnummer is geen geldig kaartnummer.</string>
+    <string name="invalid_expiry_month">De vervalmaand van de kaart is ongeldig.</string>
+    <string name="invalid_expiry_year">Het vervaljaar van de kaart is ongeldig.</string>
+    <string name="invalid_cvc">De beveiligingscode van uw kaart is ongeldig.</string>
+    <string name="incorrect_cvc">De beveiligingscode van de kaart is niet geverifieerd.</string>
+    <string name="incorrect_zip">De postcode van de kaart is niet geverifieerd.</string>
+    <string name="expired_card">De kaart is verlopen.</string>
+    <string name="insufficient_funds">Het oplaadbedrag overschrijdt het beschikbare bedrag of de kredietlimiet van de kaart.</string>
+    <string name="lost_or_stolen">De kaart is gemarkeerd als verloren of gestolen.</string>
+    <string name="suspected_fraud">De afschrijving is vermoedelijk frauduleus.</string>
+    <string name="card_declined">De kaart is om een andere reden geweigerd.</string>
+    <string name="processing_error">Er is een fout opgetreden tijdens het verwerken van de kaart.</string>
+    <string name="blacklisted">De kaart staat op de zwarte lijst.</string>
+    <string name="expired_token">Het token is verlopen.</string>
+    <string name="limit_exceeded">Het bedrag van de afschrijving overschrijdt het beschikbare saldo of de kredietlimiet van de kaart.</string>
+</resources>

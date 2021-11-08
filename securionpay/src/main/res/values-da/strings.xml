@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Tilføj betaling</string>
+    <string name="select_amount">Vælg beløb</string>
+    <string name="email">E-mail</string>
+    <string name="card_information">Kortoplysninger</string>
+    <string name="card_number">Kortnummer</string>
+    <string name="expiration">Udløbsdato</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Spar dette kort til fremtidige betalinger</string>
+    <string name="enter_payment_data">Indtast betalingsdata</string>
+    <string name="confirm">Bekræftelse</string>
+    <string name="pay">Betal %s</string>
+    <string name="user_information">Brugeroplysninger</string>
+    <string name="unlock_card_details">Lås kortoplysninger op</string>
+    <string name="sms_code_info">Indtast den kode, vi netop har sendt til din mobiltelefon</string>
+    <string name="card">Kort</string>
+    <string name="no_code_info">Har du ikke fået koden?</string>
+
+    <string name="invalid_email">Ugyldig emailadresse.</string>
+    <string name="unknown_error">Ukendt fejl. Prøv igen eller kontakt support.</string>
+    <string name="invalid_number">Kortnummeret er ikke et gyldigt kortnummer.</string>
+    <string name="invalid_expiry_month">Kortets udløbsmåned er ugyldig.</string>
+    <string name="invalid_expiry_year">Kortets udløbsår er ugyldigt.</string>
+    <string name="invalid_cvc">Kortets sikkerhedskode er ugyldig.</string>
+    <string name="incorrect_cvc">Kortets sikkerhedskode blev ikke verificeret.</string>
+    <string name="incorrect_zip">Kortets postnummer blev ikke verificeret.</string>
+    <string name="expired_card">Kortet er udløbet.</string>
+    <string name="insufficient_funds">Det opkrævede beløb overstiger den disponible fond eller kortets kreditgrænse.</string>
+    <string name="lost_or_stolen">Kortet er markeret som mistet eller stjålet.</string>
+    <string name="suspected_fraud">Den opkrævning er mistænkt for at være svigagtig.</string>
+    <string name="card_declined">Kortet er blevet afvist af anden grund.</string>
+    <string name="processing_error">Der opstod en fejl under behandlingen af kortet.</string>
+    <string name="blacklisted">Kortet er sortlistet.</string>
+    <string name="expired_token">Tokenet er udløbet.</string>
+    <string name="limit_exceeded">Det opkrævede beløb overstiger den disponible fond eller kortets kreditgrænse.</string>
+</resources>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Добавяне на плащане</string>
+    <string name="select_amount">Изберете сума</string>
+    <string name="email">Електронна поща</string>
+    <string name="card_information">Информация за картата</string>
+    <string name="card_number">Номер на картата</string>
+    <string name="expiration">Дата на изтичане на срока на валидност</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Запазване на тази карта за бъдещи плащания</string>
+    <string name="enter_payment_data">Въвеждане на данни за плащане</string>
+    <string name="confirm">Потвърждаване</string>
+    <string name="pay">Плащане на %s</string>
+    <string name="user_information">Информация за потребителя</string>
+    <string name="unlock_card_details">Отключване на данните за картата</string>
+    <string name="sms_code_info">Въведете кода, който току-що изпратихме на вашия мобилен телефон</string>
+    <string name="card">Карта</string>
+    <string name="no_code_info">Не получихте кода?</string>
+
+    <string name="invalid_email">Невалиден електронен адрес.</string>
+    <string name="unknown_error">Непозната грешка. Опитайте отново или се свържете с поддръжката.</string>
+    <string name="invalid_number">Номерът на картата не е валиден номер на карта.</string>
+    <string name="invalid_expiry_month">Месецът на валидност на картата е невалиден.</string>
+    <string name="invalid_expiry_year">Година на валидност на картата е невалидна.</string>
+    <string name="invalid_cvc">Кодът за сигурност на вашата карта е невалиден.</string>
+    <string name="incorrect_cvc">Кодът за сигурност на картата не е успял да бъде проверен.</string>
+    <string name="incorrect_zip">Пощенският код на картата ви не успя да се провери.</string>
+    <string name="expired_card">Картата е изтекла.</string>
+    <string name="insufficient_funds">Силата на таксата надвишава наличните средства или кредитния лимит на картата.</string>
+    <string name="lost_or_stolen">Картата е отбелязана като изгубена или открадната.</string>
+    <string name="suspected_fraud">За таксата има съмнения, че е измамна.</string>
+    <string name="card_declined">Картата е отказана по друга причина.</string>
+    <string name="processing_error">При обработката на картата е възникнала грешка.</string>
+    <string name="blacklisted">Картата е включена в черния списък.</string>
+    <string name="expired_token">Токенът е изтекъл.</string>
+    <string name="limit_exceeded">Силата на таксата надвишава наличните средства или кредитния лимит на картата.</string>
+</resources>

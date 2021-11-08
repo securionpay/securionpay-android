@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Pridėti mokėjimą</string>
+    <string name="select_amount">Pasirinkite sumą</string>
+    <string name="email">Elektroninis paštas</string>
+    <string name="card_information">Kortelės informacija</string>
+    <string name="card_number">Kortelės numeris</string>
+    <string name="expiration">Galiojimo data</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Pasilikti šią kortelę būsimiems mokėjimams</string>
+    <string name="enter_payment_data">Įveskite mokėjimo duomenis</string>
+    <string name="confirm">Patvirtinti</string>
+    <string name="pay">Mokėti %s</string>
+    <string name="user_information">Vartotojo informacija</string>
+    <string name="unlock_card_details">Atrakinti kortelės duomenis</string>
+    <string name="sms_code_info">Įveskite kodą, kurį ką tik išsiuntėme į jūsų mobilųjį telefoną</string>
+    <string name="card">Kortelė</string>
+    <string name="no_code_info">Negavote kodo?</string>
+
+    <string name="invalid_email">Neteisingas el. pašto adresas.</string>
+    <string name="unknown_error">Nežinoma klaida. Pabandykite dar kartą arba kreipkitės į palaikymo tarnybą.</string>
+    <string name="invalid_number">Kortelės numeris nėra galiojantis kortelės numeris.</string>
+    <string name="invalid_expiry_month">Kortelės galiojimo mėnuo negalioja.</string>
+    <string name="invalid_expiry_year">Kortelės galiojimo metai negalioja.</string>
+    <string name="invalid_cvc">Kortelės saugumo kodas negalioja.</string>
+    <string name="incorrect_cvc">Kortelės saugumo kodo nepavyko patikrinti.</string>
+    <string name="incorrect_zip">Kortelės pašto kodo nepavyko patikrinti.</string>
+    <string name="expired_card">Kortelės galiojimo laikas baigėsi.</string>
+    <string name="insufficient_funds">Naudos suma viršija turimas lėšas arba kortelės kredito limitą.</string>
+    <string name="lost_or_stolen">Kortelė pažymėta kaip pamesta arba pavogta.</string>
+    <string name="suspected_fraud">Įtariama, kad mokestis yra apgaulingas.</string>
+    <string name="card_declined">Kortelę atsisakyta išduoti dėl kitos priežasties.</string>
+    <string name="processing_error">Apdorojant kortelę įvyko klaida.</string>
+    <string name="blacklisted">Kortelė įtraukta į juodąjį sąrašą.</string>
+    <string name="expired_token">Ženklo galiojimo laikas baigėsi.</string>
+    <string name="limit_exceeded">Naudos suma viršija turimas lėšas arba kortelės kredito limitą.</string>
+</resources>

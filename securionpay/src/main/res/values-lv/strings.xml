@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Pievienot maksājumu</string>
+    <string name="select_amount">Izvēlēties summu</string>
+    <string name="email">E-pasts</string>
+    <string name="card_information">Kartes informācija</string>
+    <string name="card_number">Kartes numurs</string>
+    <string name="expiration">Derīguma termiņš</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Saglabāt šo karti turpmākajiem maksājumiem</string>
+    <string name="enter_payment_data">Ievadiet maksājuma datus</string>
+    <string name="confirm">Pārbaudīt</string>
+    <string name="pay">Maksāt %s</string>
+    <string name="user_information">Vietotāja informācija</string>
+    <string name="unlock_card_details">Atbloķēt kartes informāciju</string>
+    <string name="sms_code_info">Ievadiet kodu, ko mēs tikko nosūtījām uz jūsu mobilo tālruni</string>
+    <string name="card">Karte</string>
+    <string name="no_code_info">Kodu nesaņēmāt?</string>
+
+    <string name="invalid_email">Nepareiza e-pasta adrese.</string>
+    <string name="unknown_error">Nezināma kļūda. Mēģiniet vēlreiz vai sazinieties ar atbalsta dienestu.</string>
+    <string name="invalid_number">Kartes numurs nav derīgs kartes numurs.</string>
+    <string name="invalid_expiry_month">Kartes derīguma termiņš ir nederīgs.</string>
+    <string name="invalid_expiry_year">Kartes derīguma termiņš ir nederīgs.</string>
+    <string name="invalid_cvc">Kartes drošības kods ir nederīgs.</string>
+    <string name="incorrect_cvc">Kartes drošības kods nav pārbaudīts.</string>
+    <string name="incorrect_zip">Kartes pasta indekss nav pārbaudīts.</string>
+    <string name="expired_card">Kartes derīguma termiņš ir beidzies.</string>
+    <string name="insufficient_funds">Nomaksas summa pārsniedz pieejamo līdzekļu apjomu vai kartes kredītlimitu.</string>
+    <string name="lost_or_stolen">Karte ir atzīmēta kā nozaudēta vai nozagta.</string>
+    <string name="suspected_fraud">Ir aizdomas, ka maksa ir krāpnieciska.</string>
+    <string name="card_declined">Karte tika noraidīta cita iemesla dēļ.</string>
+    <string name="processing_error">Kartes apstrādes laikā notika kļūda.</string>
+    <string name="blacklisted">Karte ir melnajā sarakstā.</string>
+    <string name="expired_token">Tekena derīguma termiņš ir beidzies.</string>
+    <string name="limit_exceeded">Nomaksas summa pārsniedz pieejamos līdzekļus vai kartes kredītlimitu.</string>
+</resources>

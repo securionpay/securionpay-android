@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Añadir pago</string>
+    <string name="select_amount">Seleccionar importe</string>
+    <string name="email">Correo electrónico</string>
+    <string name="card_information">Información de la tarjeta</string>
+    <string name="card_number">Número de tarjeta</string>
+    <string name="expiration">Fecha de caducidad</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Guardar esta tarjeta para futuros pagos</string>
+    <string name="enter_payment_data">Introducir los datos de pago</string>
+    <string name="confirm">Confirmar</string>
+    <string name="pay">Pagar %s</string>
+    <string name="user_information">Información del usuario</string>
+    <string name="unlock_card_details">Desbloquear los datos de la tarjeta</string>
+    <string name="sms_code_info">Introduzca el código que acabamos de enviar a su teléfono móvil</string>
+    <string name="card">Tarjeta</string>
+    <string name="no_code_info">¿No has recibido el código?</string>
+
+    <string name="invalid_email">Dirección de correo electrónico no válida.</string>
+    <string name="unknown_error">Error desconocido. Inténtelo de nuevo o póngase en contacto con el servicio de asistencia.</string>
+    <string name="invalid_number">El número de tarjeta no es un número de tarjeta válido.</string>
+    <string name="invalid_expiry_month">El mes de caducidad de la tarjeta no es válido.</string>
+    <string name="invalid_expiry_year">El año de caducidad de la tarjeta no es válido.</string>
+    <string name="invalid_cvc">El código de seguridad de su tarjeta no es válido.</string>
+    <string name="incorrect_cvc">El código de seguridad de la tarjeta no ha sido verificado.</string>
+    <string name="incorrect_zip">El código postal de la tarjeta no ha sido verificado.</string>
+    <string name="expired_card">La tarjeta ha caducado.</string>
+    <string name="insufficient_funds">El importe del cargo supera el fondo disponible o el límite de crédito de la tarjeta.</string>
+    <string name="lost_or_stolen">La tarjeta está marcada como perdida o robada.</string>
+    <string name="suspected_fraud">Se sospecha que el cargo es fraudulento.</string>
+    <string name="card_declined">La tarjeta ha sido rechazada por otro motivo.</string>
+    <string name="processing_error">Se ha producido un error al procesar la tarjeta.</string>
+    <string name="blacklisted">La tarjeta está en la lista negra.</string>
+    <string name="expired_token">El token ha caducado.</string>
+    <string name="limit_exceeded">El importe del cargo supera el fondo disponible o el límite de crédito de la tarjeta.</string>
+</resources>

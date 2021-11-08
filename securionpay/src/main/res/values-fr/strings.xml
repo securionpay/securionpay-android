@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Ajouter un paiement</string>
+    <string name="select_amount">Sélectionner le montant</string>
+    <string name="email">E-mail</string>
+    <string name="card_information">Informations sur la carte</string>
+    <string name="card_number">Numéro de carte</string>
+    <string name="expiration">Date d\'expiration</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Enregistrer cette carte pour des paiements futurs</string>
+    <string name="enter_payment_data">Entrez les données du paiement</string>
+    <string name="confirm">Confirmer</string>
+    <string name="pay">Payer %s</string>
+    <string name="user_information">Informations sur l\'utilisateur</string>
+    <string name="unlock_card_details">Débloquer les détails de la carte</string>
+    <string name="sms_code_info">Entrez le code que nous venons d\'envoyer à votre téléphone portable</string>
+    <string name="card">Carte</string>
+    <string name="no_code_info">Vous n\'avez pas reçu le code?</string>
+
+    <string name="invalid_email">Adresse e-mail non valide.</string>
+    <string name="unknown_error">Erreur inconnue. Essayez à nouveau ou contactez l\'assistance.</string>
+    <string name="invalid_number">Le numéro de carte n\'est pas un numéro de carte valide.</string>
+    <string name="invalid_expiry_month">Le mois d\'expiration de la carte est invalide.</string>
+    <string name="invalid_expiry_year">L\'année d\'expiration de la carte n\'est pas valide.</string>
+    <string name="invalid_cvc">Le code de sécurité de votre card\ est invalide.</string>
+    <string name="incorrect_cvc">Le code de sécurité de votre card\ a échoué à la vérification.</string>
+    <string name="incorrect_zip">La vérification du code postal de la carte a échoué.</string>
+    <string name="expired_card">La carte a expiré.</string>
+    <string name="insufficient_funds">Le montant de l\'opération dépasse les fonds disponibles ou la limite de crédit du titulaire de la carte.</string>
+    <string name="lost_or_stolen">La carte est marquée comme perdue ou volée.</string>
+    <string name="suspected_fraud">La charge est suspectée d\'être frauduleuse.</string>
+    <string name="card_declined">La carte a été refusée pour une autre raison.</string>
+    <string name="processing_error">Une erreur s\'est produite lors du traitement de la carte.</string>
+    <string name="blacklisted">La carte est sur liste noire.</string>
+    <string name="expired_token">Le jeton a expiré.</string>
+    <string name="limit_exceeded">Le montant du débit dépasse le fonds disponible ou la limite de crédit de la carte.</string>
+</resources>

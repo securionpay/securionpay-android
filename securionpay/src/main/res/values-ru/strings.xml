@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Добавить платеж</string>
+    <string name="select_amount">Выбрать сумму</string>
+    <string name="email">E-mail</string>
+    <string name="card_information">Информация о карте</string>
+    <string name="card_number">Номер карты</string>
+    <string name="expiration">Дата истечения срока действия</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Сохранить эту карту для будущих платежей</string>
+    <string name="enter_payment_data">Введите данные платежа</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="pay">Оплатить %s</string>
+    <string name="user_information">Информация о пользователе</string>
+    <string name="unlock_card_details">Разблокировать данные карты</string>
+    <string name="sms_code_info">Введите код, который мы\ только что отправили на ваш мобильный телефон</string>.
+
+    <string name="card">Карта</string>
+    <string name="no_code_info">Не получили код?</string>
+    <string name="invalid_email">Неправильный адрес электронной почты.</string>
+    <string name="unknown_error">Неизвестная ошибка. Попробуйте еще раз или обратитесь в службу поддержки.</string>
+    <string name="invalid_number">Номер карты не является действительным.</string>
+    <string name="invalid_expiry_month">Месяц окончания действия карты\ недействителен.</string>
+    <string name="invalid_expiry_year">Год окончания действия карты\ недействителен.</string>
+    <string name="invalid_cvc">Код безопасности вашей карты\ недействителен.</string>
+    <string name="incorrect_cvc">Защитный код вашей карты\ не прошел проверку.</string>
+    <string name="incorrect_zip">Почтовый код карты\ не прошел проверку.</string>
+    <string name="expired_card">Срок действия карты истек.</string>
+    <string name="insufficient_funds">Сумма списания превышает доступный фонд или кредитный лимит карты\.</string>.
+    <string name="lost_or_stolen">Карта помечена как утерянная или украденная.</string>
+    <string name="suspected_fraud">Списание подозревается как мошенническое.</string>
+    <string name="card_declined">Карта была отклонена по другой причине.</string>
+    <string name="processing_error">Во время обработки карты произошла ошибка.</string>
+    <string name="blacklisted">Карта занесена в черный список.</string>
+    <string name="expired_token">Токен истек.</string>
+    <string name="limit_exceeded">Сумма списания превышает доступный фонд или кредитный лимит карты\.</string>.
+</resources>

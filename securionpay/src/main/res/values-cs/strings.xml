@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Přidat platbu</string>
+    <string name="select_amount">Výběr částky</string>
+    <string name="email">E-mail</string>
+    <string name="card_information">Informace o kartě</string>
+    <string name="card_number">Číslo karty</string>
+    <string name="expiration">Datum expirace</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Uložit tuto kartu pro budoucí platby</string>
+    <string name="enter_payment_data">Zadání platebních údajů</string>
+    <string name="confirm">Potvrdit</string>
+    <string name="pay">Platba %s</string>
+    <string name="user_information">Informace o uživateli</string>
+    <string name="unlock_card_details">Odemknout údaje o kartě</string>
+    <string name="sms_code_info">Zadejte kód, který jsme právě zaslali na váš mobilní telefon</string>
+    <string name="card">Karta</string>
+    <string name="no_code_info">Nedostali jste kód?</string>
+
+    <string name="invalid_email">Neplatná e-mailová adresa.</string>
+    <string name="unknown_error">Neznámá chyba. Zkuste to znovu nebo kontaktujte podporu.</string>
+    <string name="invalid_number">Číslo karty není platné.</string>
+    <string name="invalid_expiry_month">Měsíc platnosti karty je neplatný.</string>
+    <string name="invalid_expiry_year">Rok platnosti karty je neplatný.</string>
+    <string name="invalid_cvc">Bezpečnostní kód karty je neplatný.</string>
+    <string name="incorrect_cvc">Bezpečnostní kód karty se nepodařilo ověřit.</string>
+    <string name="incorrect_zip">Poštovní směrovací číslo karty se nepodařilo ověřit.</string>
+    <string name="expired_card">Karta pozbyla platnosti.</string>
+    <string name="insufficient_funds">Suma poplatku přesahuje dostupné prostředky nebo úvěrový limit karty.</string>
+    <string name="lost_or_stolen">Karta je označena jako ztracená nebo odcizená.</string>
+    <string name="suspected_fraud">Účet je podezřelý z podvodu.</string>
+    <string name="card_declined">Karta byla odmítnuta z jiného důvodu.</string>
+    <string name="processing_error">Při zpracování karty došlo k chybě.</string>
+    <string name="blacklisted">Karta je na černé listině.</string>
+    <string name="expired_token">Token vypršel.</string>
+    <string name="limit_exceeded">Suma poplatku přesahuje dostupné prostředky nebo úvěrový limit karty.</string>
+</resources>

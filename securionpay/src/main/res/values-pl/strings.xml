@@ -1,0 +1,36 @@
+<resources>
+    <string name="add_payment">Dodaj płatność</string>
+    <string name="select_amount">Wybierz kwotę</string>
+    <string name="email">E-mail</string>
+    <string name="card_information">Informacje o karcie</string>
+    <string name="card_number">Numer karty</string>
+    <string name="expiration">Data wygaśnięcia</string>
+    <string name="cvc">CVC</string>
+    <string name="save_for_future_payments">Zapisz tę kartę dla przyszłych płatności</string>
+    <string name="enter_payment_data">Wprowadź dane płatności</string>
+    <string name="confirm">Potwierdź</string>
+    <string name="pay">Zapłać %s</string>
+    <string name="user_information">Informacje o użytkowniku</string>
+    <string name="unlock_card_details">Odblokuj dane karty</string>
+    <string name="sms_code_info">Wprowadź kod, który właśnie wysłaliśmy na Twój telefon komórkowy</string>
+    <string name="card">Karta</string>
+    <string name="no_code_info">Nie otrzymałeś kodu?</string>
+
+    <string name="invalid_email">Nieprawidłowy adres e-mail.</string>
+    <string name="unknown_error">Nieznany błąd. Spróbuj ponownie lub skontaktuj się z pomocą techniczną.</string>
+    <string name="invalid_number">Numer karty nie jest prawidłowym numerem karty.</string>
+    <string name="invalid_expiry_month">Nieprawidłowy miesiąc ważności karty.</string>
+    <string name="invalid_expiry_year">Rok ważności karty jest nieprawidłowy.</string>
+    <string name="invalid_cvc">Kod bezpieczeństwa Twojej karty jest nieprawidłowy.</string>
+    <string name="incorrect_cvc">Kod bezpieczeństwa karty nie przeszedł weryfikacji.</string>
+    <string name="incorrect_zip">Kod pocztowy karty nie przeszedł weryfikacji.</string>
+    <string name="expired_card">Karta straciła ważność.</string>
+    <string name="insufficient_funds">Kwota obciążenia przekracza dostępne środki lub limit kredytowy karty.</string>
+    <string name="lost_or_stolen">Karta jest oznaczona jako zagubiona lub skradziona.</string>
+    <string name="suspected_fraud">Opłata jest podejrzana o oszustwo.</string>
+    <string name="card_declined">Karta została odrzucona z innego powodu.</string>
+    <string name="processing_error">Podczas przetwarzania karty wystąpił błąd.</string>
+    <string name="blacklisted">Karta znajduje się na czarnej liście.</string>
+    <string name="expired_token">Token wygasł.</string>
+    <string name="limit_exceeded">Kwota obciążenia przekracza dostępne fundusze lub limit kredytowy karty.</string>
+</resources>

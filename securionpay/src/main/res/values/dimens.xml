@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_radius">5dp</dimen>
+    <dimen name="border_width">1dp</dimen>
+    <dimen name="separator_size">1dp</dimen>
+    <dimen name="button_height">60dp</dimen>
+
+    <dimen name="padding_extreme">40dp</dimen>
+    <dimen name="padding_huge">32dp</dimen>
+    <dimen name="padding_big">24dp</dimen>
+    <dimen name="padding_standard">16dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_compact">4dp</dimen>
+
+    <dimen name="font_label">10sp</dimen>
+    <dimen name="font_error">12sp</dimen>
+    <dimen name="font_body">14sp</dimen>
+    <dimen name="font_tile_label">14sp</dimen>
+    <dimen name="font_section">16sp</dimen>
+    <dimen name="font_button">14sp</dimen>
+    <dimen name="font_title">24sp</dimen>
+</resources>
