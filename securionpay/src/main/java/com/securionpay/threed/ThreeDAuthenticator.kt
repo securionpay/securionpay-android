@@ -31,7 +31,7 @@ internal class ThreeDAuthenticator(
             return@launch
         }
         if (threeDCheckData.token.threeDSecureInfo?.enrolled != true || threeDCheckData.version.first() == '1') {
-            executeCallback(Result.success(token))
+            executeCallback(Result.success(threeDCheckData.token))
             return@launch
         }
         progressDialog(true)

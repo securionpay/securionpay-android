@@ -358,7 +358,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/font_body" />
 
-        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        <com.apachat.loadingbutton.core.customViews.CircularProgressButton
             android:id="@+id/buttonPayment"
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"

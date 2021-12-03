@@ -1,3 +1,6 @@
 rootProject.name = "SecurionPay"
 include ':example'
 include ':securionpay'
+include ':ipworks'
+include ':ipworks_debug'
+include ':publish'

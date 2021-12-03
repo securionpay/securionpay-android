@@ -22,13 +22,24 @@ We provide methods corresponding to SecurionPay API. It allows you creating an e
 
 You can process payments in 18 languages.
 
+## Requirements and limitations
+
+Strict requirements of PCI 3DS SDK make development impossible. Running on simulator or debugging are forbidden in a production build of your application. We provide two versions of Framework both for Debug and Release builds so you can create and debug your application without any issues.
+
+Releasing using a store other than Play Store is forbidden by default. If you want to use a different store, for example Firebase App Distribution, you have to provide their identifiers as described below.
+
+## Play Store Review
+
+To ensure that an application using our SDK successfully passes the review process to the Play Store, we have integrated it into the SecurionPay application. It also allows you to familiarize yourself with the features of our Framework in a convenient way. To do this, download the application (https://play.google.com/store/apps/details?id=com.securionpay.securionpay), then in the Profile tab, turn on the test mode. A Developers section will appear at the bottom of the screen with a demonstration of the Framework.
+
 ## Installation
 
 Add `securionpay-android` to your `build.gradle` dependencies.
 
 ```
 dependencies {
-    implementation 'com.securionpay:securionpay-android:1.0.0'
+    releaseImplementation 'com.securionpay:securionpay-android:1.0.0'
+    debugImplementation 'com.securionpay:securionpay-android-debug:1.0.0'
 }
 ```
 
@@ -40,11 +51,7 @@ If you have not created an account yet, you can do it here: https://securionpay.
 
 To configure the framework you need to provide the public key. You can find it here: https://securionpay.com/account-settings. Notice that there are two types of keys: live and test. The type of key determines application mode. Make sure you used a live key in build released to Play Store.
 
-Framework also requires you to specify App Signature. This property should be set to the SHA256 fingerprint of the certificate used to sign the app.  Any attempt to perform the 3D Secure operation in release mode results in error if they do not match. This value should not be hardcoded in the application for security reasons. You should provide it on your backend side. You can use keytool to get a fingerprint.
-
-```
-keytool -list -v -keystore <keystore path> -alias <key alias> -storepass <store password> -keypass <key password>
-```
+Framework also requires you to specify App Signature. This property should be set to the SHA256 fingerprint of the certificate used to sign the app. You can find it in Google Play Console. Any attempt to perform the 3D Secure operation in release mode results in error if they do not match. This value should not be hardcoded in the application for security reasons. You should provide it on your backend side. 
 
 Releasing using a store other than Play Store is forbidden by default. If you want to use a different store, for example Firebase App Distribution, you have to provide their identifiers. 
 
