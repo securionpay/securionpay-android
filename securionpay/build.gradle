@@ -1,6 +1,38 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.github.kezong:fat-aar:1.3.6'
+    }
+}
+
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
+}
+
+ext {
+    PUBLISH_GROUP_ID = 'com.securionpay'
+    PUBLISH_VERSION = '1.0.0'
+    PUBLISH_ARTIFACT_ID = 'securionpay-android'
+    PUBLISH_DESCRIPTION = 'SecurionPay Android SDK'
+    PUBLISH_URL = 'https://github.com/securionpay/securionpay-android'
+    PUBLISH_LICENSE_NAME = 'MIT'
+    PUBLISH_LICENSE_URL = 'https://github.com/securionpay//LICENSE'
+    PUBLISH_DEVELOPER_ID = 'securionpay'
+    PUBLISH_DEVELOPER_NAME = 'SecurionPay'
+    PUBLISH_DEVELOPER_EMAIL = 'support@securionpay.com'
+    PUBLISH_SCM_CONNECTION =
+            'scm:git:github.com/securionpay/securionpay-android.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION =
+            'scm:git:ssh://github.com/securionpay/securionpay-android.git'
+    PUBLISH_SCM_URL =
+            'https://github.com/securionpay/securionpay-android/tree/master'
+}
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
 }
 
 android {
@@ -8,17 +40,39 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.securionpay.example"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 58
-        versionName "1.0.0"
+        versionCode 4
+        versionName rootProject.version
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+            reports {
+                ignoreFailures = true
+                junitXml.enabled = true
+            }
+        }
+        unitTests.includeAndroidResources = true
     }
 
     buildTypes {
+        debug {
+            buildConfigField("long", "VERSION_CODE", "${defaultConfig.versionCode}")
+            buildConfigField("String", "VERSION_NAME", "\"${defaultConfig.versionName}\"")
+            buildConfigField("String", "API_URL", "\"https://api.securionpay.com\"")
+            buildConfigField("String", "BACKOFFICE_URL", "\"https://securionpay.com\"")
+        }
         release {
+            buildConfigField("long", "VERSION_CODE", "${defaultConfig.versionCode}")
+            buildConfigField("String", "VERSION_NAME", "\"${defaultConfig.versionName}\"")
+            buildConfigField("String", "API_URL", "\"https://api.securionpay.com\"")
+            buildConfigField("String", "BACKOFFICE_URL", "\"https://securionpay.com\"")
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -30,38 +84,63 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE.md'
-        exclude 'META-INF/LICENSE-notice.md'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/ASL2.0'
-        exclude("META-INF/*.kotlin_module")
+    apply plugin: 'kotlin-android-extensions'
+    apply plugin: 'com.kezong.fat-aar'
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId = 'com.securionpay'
+                artifactId = 'securionpay-android'
+                version = rootProject.version
+
+                pom.withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+
+                    //Iterate over the compile dependencies (we don't want the test ones), adding a <dependency> node for each
+                    configurations.implementation.allDependencies.each {
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                    }
+                }
+            }
+        }
+    }
+
+    dependencies {
+        //Android
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        implementation 'androidx.core:core-ktx:1.3.1'
+        implementation 'com.google.android.material:material:1.0.0'
+
+        //NSoftware
+        debugEmbed project(path: ':ipworks_debug', configuration: 'default')
+        releaseEmbed project(path: ':ipworks', configuration: 'default')
+
+        //Retrofit
+        implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+        implementation 'com.google.code.gson:gson:2.8.5'
+        implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+        //Coroutines
+        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5'
+
+        //External
+        implementation 'com.alimuzaffar.lib:pinentryedittext:2.0.6'
+        implementation group: 'com.apachat', name: 'loadingbutton-android', version: '1.0.11'
+
+        //Test
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+        testImplementation 'org.apache.directory.studio:org.apache.commons.codec:1.8'
+        testImplementation "androidx.arch.core:core-testing:2.1.0"
+        testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2"
     }
 }
 
 dependencies {
-    implementation project(':securionpay')
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-
-    //Test
-    androidTestImplementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-    androidTestRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
-    androidTestImplementation 'junit:junit:4.12'
-    androidTestImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5'
-    androidTestImplementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    androidTestImplementation 'com.google.code.gson:gson:2.8.5'
-    androidTestImplementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation 'androidx.test:runner:1.4.0'
-    androidTestImplementation 'androidx.test:rules:1.4.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
+    testImplementation 'junit:junit:4.12'
 }
