@@ -1,6 +1,8 @@
 package com.securionpay.data.model.pay
 
 import com.google.gson.Gson
+import com.securionpay.utils.CurrencyFormatter
+import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.*
 
@@ -29,10 +31,7 @@ data class CheckoutRequest(internal val content: String) {
         get() {
             val amount = checkoutRequestContent.charge?.amount ?: return ""
             val currency = checkoutRequestContent.charge?.currency ?: return ""
-
-            val format = NumberFormat.getCurrencyInstance(Locale.getDefault())
-            format.currency = Currency.getInstance(currency)
-            return format.format(amount.toDouble() / 100).replace(" ", " ")
+            return CurrencyFormatter.format(amount.toBigDecimal(), currency, divideMinorUnits = true)
         }
 
     internal val rememberMe: Boolean

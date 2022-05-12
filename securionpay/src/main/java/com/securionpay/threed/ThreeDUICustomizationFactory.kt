@@ -55,6 +55,7 @@ internal class ThreeDUICustomizationFactory(val context: Context) {
         textBoxCustomization.textFontSize = 14
         textBoxCustomization.cornerRadius = 10
         textBoxCustomization.borderColor = context.resources.getString(R.color.grayLight)
+        textBoxCustomization.textColor = context.resources.getString(R.color.black)
 
         uiCustomization.toolbarCustomization.backgroundColor =
             context.resources.getString(R.color.white)

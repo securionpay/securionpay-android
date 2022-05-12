@@ -200,20 +200,7 @@ internal class CheckoutManager(
                     }
                 }
             }
-        } else if (ares.transStatus == "Y") {
-            repository.threeDChallengeComplete(threeDCheckData.token)
-            val paymentResult = repository.pay(
-                token,
-                checkoutRequest,
-                email,
-                remember,
-                cvc,
-                sms,
-                computedCustomAmount
-            )
-            GlobalScope.launch(Dispatchers.Main) { threeDManager.hideProgressDialog() }
-            GlobalScope.launch(Dispatchers.Main) { callback(paymentResult) }
-        } else {
+        } else if (ares.transStatus == "N" || ares.transStatus == "U" || ares.transStatus == "R") {
             if (checkoutRequest.requireSuccessfulLiabilityShiftForEnrolledCard) {
                 callback(Result.error(APIError.successfulLiabilityShiftIsRequired, null))
                 GlobalScope.launch(Dispatchers.Main) { threeDManager.hideProgressDialog() }
@@ -232,6 +219,19 @@ internal class CheckoutManager(
                 GlobalScope.launch(Dispatchers.Main) { threeDManager.hideProgressDialog() }
                 GlobalScope.launch(Dispatchers.Main) { callback(paymentResult) }
             }
+        } else {
+            repository.threeDChallengeComplete(threeDCheckData.token)
+            val paymentResult = repository.pay(
+                token,
+                checkoutRequest,
+                email,
+                remember,
+                cvc,
+                sms,
+                computedCustomAmount
+            )
+            GlobalScope.launch(Dispatchers.Main) { threeDManager.hideProgressDialog() }
+            GlobalScope.launch(Dispatchers.Main) { callback(paymentResult) }
         }
     }
 

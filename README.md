@@ -38,8 +38,8 @@ Add `securionpay-android` to your `build.gradle` dependencies.
 
 ```
 dependencies {
-    releaseImplementation 'com.securionpay:securionpay-android:1.0.0'
-    debugImplementation 'com.securionpay:securionpay-android-debug:1.0.0'
+    releaseImplementation 'com.securionpay:securionpay-android:1.0.2'
+    debugImplementation 'com.securionpay:securionpay-android-debug:1.0.2'
 }
 ```
 

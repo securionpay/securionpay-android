@@ -43,10 +43,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:background="@color/white"
                 android:id="@+id/buttonClose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:src="@drawable/ic_close"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -80,6 +80,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEmail"
                 style="@style/TextInputStyle"
+                android:background="@color/white"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress" />
 
@@ -200,6 +201,7 @@
                         style="@style/TextInputStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/white"
                         android:imeOptions="actionNext"
                         android:inputType="datetime" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -245,6 +247,7 @@
                         style="@style/TextInputStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/white"
                         android:imeOptions="actionNext"
                         android:inputType="datetime"
                         android:textCursorDrawable="@drawable/color_cursor" />
@@ -272,6 +275,7 @@
                             android:id="@+id/textInputCVC"
                             style="@style/TextInputStyle"
                             android:layout_width="113dp"
+                            android:background="@color/white"
                             android:imeOptions="actionDone"
                             android:inputType="number" />
 

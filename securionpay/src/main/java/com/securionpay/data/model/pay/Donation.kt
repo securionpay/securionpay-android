@@ -1,12 +1,12 @@
 package com.securionpay.data.model.pay
 
+import com.securionpay.utils.CurrencyFormatter
+import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.*
 
 internal data class Donation(val amount: Int, val currency: String) {
     val readable: String get() {
-        val format = NumberFormat.getCurrencyInstance(Locale.getDefault())
-        format.currency = Currency.getInstance(currency)
-        return format.format(amount.toDouble()/100).replace(" ", " ")
+        return CurrencyFormatter.format(amount.toBigDecimal(), currency, true)
     }
 }

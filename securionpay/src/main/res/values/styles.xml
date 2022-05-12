@@ -10,7 +10,7 @@
 
     </style>
 
-    <style name="TextInputLayoutStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="TextInputLayoutStyle" parent="Theme.AppCompat.Light">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:backgroundTint">@android:color/transparent</item>
@@ -27,7 +27,7 @@
         <item name="android:paddingBottom">1dp</item>
     </style>
 
-    <style name="TextInputStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="TextInputStyle" parent="Theme.AppCompat.Light">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:maxLines">1</item>

@@ -135,11 +135,11 @@ data class APIError(
         @SerializedName("limit_exceeded")
         LimitExceeded("limit_exceeded"),
 
-        @SerializedName("invalid-verification-code")
-        InvalidVerificationCode("invalid-verification-code"),
+        @SerializedName("verification_code_invalid")
+        InvalidVerificationCode("verification_code_invalid"),
 
-        @SerializedName("verification-code-required")
-        VerificationCodeRequired("verification-code-required"),
+        @SerializedName("verification_code_required")
+        VerificationCodeRequired("verification_code_required"),
 
         InvalidCheckoutRequest("invalid-checkout-request"),
         UnsupportedValue("unsupported-value"),

@@ -1,6 +1,5 @@
 package com.securionpay.data.api
 
-import android.content.Context
 import com.securionpay.data.repository.BasicAuthInterceptor
 import com.securionpay.data.repository.RefererInterceptor
 import com.securionpay.data.repository.UserAgentInterceptor

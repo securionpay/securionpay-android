@@ -68,7 +68,7 @@ internal class SDKRepository(private val securionPay: SecurionPay) {
             )
             val result = responseHandler.handleSuccess(service.pay(chargeRequest))
             if (remember) {
-                securionPay.emailStorage.addSavedEmail(email)
+                securionPay.emailStorage.lastEmail = email
             }
             result
         } catch (e: Exception) {

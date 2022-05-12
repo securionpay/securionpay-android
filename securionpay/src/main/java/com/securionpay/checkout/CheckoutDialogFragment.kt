@@ -1,6 +1,5 @@
 package com.securionpay.checkout
 
-import android.R.attr.*
 import android.app.Activity
 import android.content.DialogInterface
 import android.os.Bundle
@@ -41,7 +40,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
+internal class CheckoutDialogFragment : BottomSheetDialogFragment() {
     private lateinit var checkoutManager: CheckoutManager
     private lateinit var checkoutRequest: CheckoutRequest
     override fun onCreateView(
@@ -116,11 +115,11 @@ internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
         textInputEmail.addTextChangedListener {
             if (emailFlag) {
                 emailFlag = false
-            } else {
-                clearTextIfSavedEmail()
-                lookup()
-                updateButtonStatus()
             }
+            clearTextIfSavedEmail()
+            lookup(silent = true)
+            updateButtonStatus()
+            updateCardBrand()
         }
 
         textInputCardNumber.setOnKeyListener { _, keyCode, _ ->
@@ -137,7 +136,7 @@ internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
             } else {
                 clearTextIfSavedEmail()
                 creditCard = CreditCard(textInputCardNumber.text?.toString())
-                imageViewCardBrand.setImageDrawable(creditCard.image(resources))
+                updateCardBrand()
                 if (creditCard.correct) {
                     textInputExpiration.requestFocus()
                 }
@@ -209,33 +208,43 @@ internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
         updateEmailError(null)
         updateCardError(null)
 
-        if (checkoutRequest.donations != null) {
-            val donationsAdapter = DonationsAdapter(checkoutRequest.donations!!.toTypedArray())
-            donationsAdapter.onItemClick = {
-                selectedDonation = it
+        when {
+            checkoutRequest.donations != null -> {
+                val donationsAdapter = DonationsAdapter(checkoutRequest.donations!!.toTypedArray())
+                donationsAdapter.onItemClick = {
+                    selectedDonation = it
+                }
+                recyclerViewDonation.adapter = donationsAdapter
+                recyclerViewDonation.addItemDecoration(
+                    DonationsAdapter.DonationItemDecoration(
+                        context
+                    )
+                )
+                switchMode(Mode.DONATION)
             }
-            recyclerViewDonation.adapter = donationsAdapter
-            recyclerViewDonation.addItemDecoration(DonationsAdapter.DonationItemDecoration(context))
-            switchMode(Mode.DONATION)
-        } else if (checkoutRequest.subscriptionPlanId != null) {
-            switchMode(Mode.LOADING)
-            hideKeyboard()
-            getCheckoutDetails()
-        } else if (checkoutManager.emailStorage.lastEmail != null) {
-            hideKeyboard()
-            switchMode(Mode.LOADING)
+            checkoutRequest.subscriptionPlanId != null -> {
+                switchMode(Mode.LOADING)
+                hideKeyboard()
+                getCheckoutDetails()
+                switchRememberCard.isChecked = checkoutRequest.rememberMe
+            }
+            checkoutManager.emailStorage.lastEmail != null -> {
+                hideKeyboard()
+                switchMode(Mode.LOADING)
 
-            updateButtonStatus()
-            switchRememberCard.isChecked = checkoutRequest.rememberMe
-            updateAmountOnButton()
-            checkoutManager.emailStorage.lastEmail?.also {
-                textInputEmail.setText(it)
+                updateButtonStatus()
+                switchRememberCard.isChecked = checkoutRequest.rememberMe
+                updateAmountOnButton()
+                checkoutManager.emailStorage.lastEmail?.also {
+                    textInputEmail.setText(it)
+                }
             }
-        } else {
-            switchMode(Mode.NEW_CARD)
-            updateButtonStatus()
-            switchRememberCard.isChecked = checkoutRequest.rememberMe
-            updateAmountOnButton()
+            else -> {
+                switchMode(Mode.NEW_CARD)
+                updateButtonStatus()
+                switchRememberCard.isChecked = checkoutRequest.rememberMe
+                updateAmountOnButton()
+            }
         }
     }
 
@@ -469,19 +478,44 @@ internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
         if (savedEmail != null) {
             GlobalScope.launch {
                 val token = checkoutManager.savedToken(savedEmail!!)
-                checkoutManager.pay(
-                    token.data!!,
-                    checkoutRequest,
-                    email ?: String.empty,
-                    remember = remember,
-                    activity,
-                    sms = sms,
-                    cvc = cvc,
-                    customAmount = selectedDonation?.amount ?: subscription?.plan?.amount,
-                    customCurrency = selectedDonation?.currency ?: subscription?.plan?.currency
-                ) {
-                    GlobalScope.launch(Dispatchers.Main) {
-                        processChargeResult(it)
+                GlobalScope.launch(Dispatchers.Main) {
+                    when (token.status) {
+                        Status.SUCCESS -> checkoutManager.pay(
+                            token.data!!,
+                            checkoutRequest,
+                            email ?: String.empty,
+                            remember = remember,
+                            activity,
+                            sms = sms,
+                            cvc = cvc,
+                            customAmount = selectedDonation?.amount ?: subscription?.plan?.amount,
+                            customCurrency = selectedDonation?.currency
+                                ?: subscription?.plan?.currency
+                        ) {
+                            GlobalScope.launch(Dispatchers.Main) {
+                                checkoutManager.emailStorage.lastEmail =
+                                    if (it.data != null) savedEmail else null
+
+                                if (it.error != null) {
+                                    savedEmail = null
+                                    textInputCardNumber.text = null
+                                    textInputExpiration.text = null
+                                    textInputCVC.text = null
+                                    creditCard = CreditCard.empty
+                                    updateCardBrand()
+                                    updateSwitchVisibility()
+                                }
+
+                                processChargeResult(it)
+                            }
+                        }
+                        Status.ERROR -> {
+                            setProcessing(false)
+                            Handler(Looper.getMainLooper()).postDelayed({
+                                buttonPayment.revertAnimation()
+                            }, 100)
+                            token.error?.let { updateError(it.message(this@CheckoutDialogFragment.requireContext())) }
+                        }
                     }
                 }
             }
@@ -645,15 +679,14 @@ internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
             .toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY)
     }
 
-    private fun lookup() {
+    private fun lookup(silent: Boolean = false) {
         val email = textInputEmail.text?.toString() ?: String.empty
         if (email.isEmpty()) {
             return
         }
-        if (!checkoutManager.emailStorage.isEmailSaved(email)) {
-            return
+        if (!silent) {
+            setProcessing(true)
         }
-        setProcessing(true)
         GlobalScope.launch {
             val lookup = checkoutManager.lookup(email)
             withContext(Dispatchers.Main) {
@@ -691,9 +724,11 @@ internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
                         }
                     }
                     Status.ERROR -> lookup.error?.also { error ->
-                        updateError(error.message(context))
-                        updateAmountOnButton()
-                        setProcessing(false)
+                        if (!silent) {
+                            updateError(error.message(context))
+                            updateAmountOnButton()
+                            setProcessing(false)
+                        }
                     }
                 }
             }
@@ -708,9 +743,13 @@ internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
                     Status.SUCCESS -> {
                         subscription = details.data!!.subscription
                         switchMode(Mode.NEW_CARD)
+                        checkoutManager.emailStorage.lastEmail?.also {
+                            textInputEmail.setText(it)
+                        }
                     }
                     Status.ERROR -> {
-
+                        callback(Result.error(APIError.unknown))
+                        dismiss()
                     }
                 }
             }
@@ -731,11 +770,7 @@ internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
             textInputCVC.text = null
             textInputCVC.requestFocus()
         }
-        imageViewCardBrand.setImageDrawable(
-            creditCard.image(
-                resources
-            )
-        )
+        updateCardBrand()
         updateButtonStatus()
         updateSwitchVisibility()
     }
@@ -775,5 +810,9 @@ internal class CheckoutDialogFragment() : BottomSheetDialogFragment() {
 
     private fun callback(result: Result<ChargeResult>?) {
         (activity as? SecurionPay.CheckoutDialogFragmentResultListener)?.onCheckoutFinish(result)
+    }
+
+    private fun updateCardBrand() {
+        imageViewCardBrand.setImageDrawable(creditCard.image(resources))
     }
 }
