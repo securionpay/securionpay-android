@@ -30,16 +30,18 @@ Releasing using a store other than Play Store is forbidden by default. If you wa
 
 ## Play Store Review
 
-To ensure that an application using our SDK successfully passes the review process to the Play Store, we have integrated it into the SecurionPay application. It also allows you to familiarize yourself with the features of our Framework in a convenient way. To do this, download the application (https://play.google.com/store/apps/details?id=com.securionpay.securionpay), then in the Profile tab, turn on the test mode. A Developers section will appear at the bottom of the screen with a demonstration of the Framework.
+To ensure that an application using our SDK successfully passes the review process to the Play Store, we have integrated it into the SecurionPay application. It also allows you to familiarize yourself with the features of our Framework in a convenient way. To do this, [download the application](https://play.google.com/store/apps/details?id=com.securionpay.securionpay), then in the Profile tab, turn on the test mode. A Developers section will appear at the bottom of the screen with a demonstration of the Framework.
 
 ## Installation
 
-Add `securionpay-android` to your `build.gradle` dependencies.
+Download both [Release](https://github.com/securionpay/securionpay-android/blob/master/ipworks/ipworks3ds_sdk_deploy.aar?raw=true) and [Debug](https://github.com/securionpay/securionpay-android/blob/master/ipworks_debug/ipworks3ds_sdk.aar?raw=true) 3D-Secure libraries, copy them to your project and add as dependencies. Next, add `securionpay-android` and `securionpay-android-debug` to your `build.gradle` dependencies.
 
 ```
 dependencies {
-    releaseImplementation 'com.securionpay:securionpay-android:1.0.2'
-    debugImplementation 'com.securionpay:securionpay-android-debug:1.0.2'
+    releaseImplementation 'com.securionpay:securionpay-android:1.0.3'
+    debugImplementation 'com.securionpay:securionpay-android-debug:1.0.3'
+    releaseImplementation files('ipworks3ds_sdk_deploy.aar')
+    debugImplementation files('ipworks3ds_sdk.aar')
 }
 ```
 

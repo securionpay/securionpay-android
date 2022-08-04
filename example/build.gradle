@@ -45,6 +45,8 @@ android {
 
 dependencies {
     implementation project(':securionpay')
+    debugImplementation fileTree(dir: "../ipworks_debug", include: ["*.aar"])
+    releaseImplementation fileTree(dir: "../ipworks", include: ["*.aar"])
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
