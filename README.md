@@ -34,12 +34,12 @@ To ensure that an application using our SDK successfully passes the review proce
 
 ## Installation
 
-Download both [Release](https://github.com/securionpay/securionpay-android/blob/master/ipworks/ipworks3ds_sdk_deploy.aar?raw=true) and [Debug](https://github.com/securionpay/securionpay-android/blob/master/ipworks_debug/ipworks3ds_sdk.aar?raw=true) 3D-Secure libraries, copy them to your project and add as dependencies. Next, add `securionpay-android` and `securionpay-android-debug` to your `build.gradle` dependencies.
+3D Secure library license requirements force us to distribute it via email. Contact support@securionpay.com to get it. Download both ipworks3ds_sdk_deploy.aar and ipworks3ds_sdk.aar 3D-Secure libraries, copy them to your project and add as dependencies. Next, add `securionpay-android` and `securionpay-android-debug` to your `build.gradle` dependencies.
 
 ```
 dependencies {
-    releaseImplementation 'com.securionpay:securionpay-android:1.0.3'
-    debugImplementation 'com.securionpay:securionpay-android-debug:1.0.3'
+    releaseImplementation 'com.securionpay:securionpay-android:1.0.4'
+    debugImplementation 'com.securionpay:securionpay-android-debug:1.0.4'
     releaseImplementation files('ipworks3ds_sdk_deploy.aar')
     debugImplementation files('ipworks3ds_sdk.aar')
 }
